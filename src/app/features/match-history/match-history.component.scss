@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+
+.standing-wrapper {
+  width: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-evenly;
+}
+.standing {
+  text-align: center;
+  &--left {
+    color: blue;
+  }
+  &--right {
+    color: red;
+  }
+}

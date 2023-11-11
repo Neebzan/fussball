@@ -17,9 +17,8 @@ export class PlayerListComponent implements AfterViewInit, OnInit {
     private _liveAnnouncer: LiveAnnouncer,
     public dialog: MatDialog,
     private playerService: PlayerService
-  ) {
-    this.playerService.getPlayers();
-  }
+  ) {}
+
   ngOnInit(): void {
     this.playerService.getPlayers().subscribe((players) => {
       this.dataSource.data = players;

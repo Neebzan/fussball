@@ -1,8 +1,34 @@
-<mat-accordion multi>
-  <app-match-item></app-match-item>
-  <app-match-item></app-match-item>
-  <app-match-item></app-match-item>
-</mat-accordion>
+<table
+  matSort
+  mat-table
+  [dataSource]="dataSource"
+  (matSortChange)="sortChange($event)"
+>
+  <ng-container matColumnDef="Played">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by played"
+    >
+      Played
+    </th>
+    <td mat-cell *matCellDef="let match">
+      {{ match.Played | date : "YYYY-MM-dd HH:mm" }}
+    </td>
+  </ng-container>
 
-<!-- Make this into at table somehow. Potentially a good source here  -->
-<!-- https://stackoverflow.com/questions/48310460/adding-expansion-panel-to-the-row-inside-angular-material-table -->
+  <ng-container matColumnDef="Standing">
+    <th mat-header-cell *matHeaderCellDef>Standing</th>
+    <td mat-cell *matCellDef="let match">
+      <div class="standing-wrapper">
+        <b class="standing--left">{{ match.TeamBlue.Score }} </b>
+        <b class="standing"> : </b>
+        <b class="standing--right">{{ match.TeamRed.Score }} </b>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+</table>

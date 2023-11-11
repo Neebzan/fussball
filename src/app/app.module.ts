@@ -31,6 +31,7 @@ import { AddPlayerComponent } from './features/player-list/add-player/add-player
 // Services
 import { PlayerService } from './features/player-list/player.service';
 import { MatchItemComponent } from './features/match-history/match-item/match-item.component';
+import { MatchStandingComponent } from './features/match-history/match-standing/match-standing.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MatchItemComponent } from './features/match-history/match-item/match-it
     EnterMatchComponent,
     AddPlayerComponent,
     MatchItemComponent,
+    MatchStandingComponent,
   ],
   imports: [
     BrowserModule,
