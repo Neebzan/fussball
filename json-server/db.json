@@ -1,5 +1,5 @@
 {
-  "players": [
+  "Players": [
     {
       "Name": "Esben Juul Dalsgaard",
       "Initials": "ESJD",
@@ -14,6 +14,26 @@
       "Name": "Morten Roager Sjælland",
       "Initials": "MORS",
       "Rating": 1075
+    },
+    {
+      "Name": "Morten Fogh",
+      "Initials": "MOFOJE",
+      "Rating": 1011
+    }
+  ],
+  "Matches": [
+    {
+      "DateTime": "2023-10-20T12:13:43.511Z",
+      "TeamBlue": {
+        "Score": 10,
+        "PlayerA": "ESJD",
+        "PlayerB": "MORS"
+      },
+      "TeamRed": {
+        "Score": 8,
+        "PlayerA": "MOFOJE",
+        "PlayerB": "MIHP"
+      }
     }
   ]
 }
