@@ -23,7 +23,7 @@
   ],
   "Matches": [
     {
-      "DateTime": "2023-10-20T12:13:43.511Z",
+      "Played": "2023-10-20T12:13:43.511Z",
       "TeamBlue": {
         "Score": 10,
         "PlayerA": {
@@ -48,7 +48,7 @@
       }
     },
     {
-      "DateTime": "2023-10-18T14:40:01.811Z",
+      "Played": "2023-10-18T14:40:01.811Z",
       "TeamBlue": {
         "Score": 4,
         "PlayerA": {

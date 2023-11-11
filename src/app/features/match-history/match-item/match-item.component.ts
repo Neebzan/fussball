@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { MatExpansionPanel } from '@angular/material/expansion';
 
 @Component({
-  selector: 'app-match-history',
-  templateUrl: './match-history.component.html',
-  styleUrls: ['./match-history.component.scss'],
+  selector: 'app-match-item',
+  templateUrl: './match-item.component.html',
+  styleUrls: ['./match-item.component.scss'],
   viewProviders: [MatExpansionPanel],
 })
-export class MatchHistoryComponent implements OnInit {
+export class MatchItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
