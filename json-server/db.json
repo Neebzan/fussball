@@ -26,13 +26,50 @@
       "DateTime": "2023-10-20T12:13:43.511Z",
       "TeamBlue": {
         "Score": 10,
-        "PlayerA": "ESJD",
-        "PlayerB": "MORS"
+        "PlayerA": {
+          "Initials": "ESJD",
+          "RatingModifier": 20
+        },
+        "PlayerB": {
+          "Initials": "MORS",
+          "RatingModifier": 13
+        }
       },
       "TeamRed": {
         "Score": 8,
-        "PlayerA": "MOFOJE",
-        "PlayerB": "MIHP"
+        "PlayerA": {
+          "Initials": "MOFOJE",
+          "RatingModifier": -21
+        },
+        "PlayerB": {
+          "Initials": "MIHP",
+          "RatingModifier": -9
+        }
+      }
+    },
+    {
+      "DateTime": "2023-10-18T14:40:01.811Z",
+      "TeamBlue": {
+        "Score": 4,
+        "PlayerA": {
+          "Initials": "ESJD",
+          "RatingModifier": -19
+        },
+        "PlayerB": {
+          "Initials": "MOFOJE",
+          "RatingModifier": -16
+        }
+      },
+      "TeamRed": {
+        "Score": 10,
+        "PlayerA": {
+          "Initials": "MORS",
+          "RatingModifier": 23
+        },
+        "PlayerB": {
+          "Initials": "MIHP",
+          "RatingModifier": 31
+        }
       }
     }
   ]
