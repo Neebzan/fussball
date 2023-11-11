@@ -1,1 +1,17 @@
-<button mat-button>Add new player</button>
+<h2 mat-dialog-title>New player</h2>
+<mat-dialog-content>
+  <mat-form-field style="margin: 0px 10px">
+    <mat-label>Name</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field style="margin: 0px 10px">
+    <mat-label>Initials</mat-label>
+    <input matInput />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true">
+    <mat-icon>cancel</mat-icon> Cancel
+  </button>
+  <button mat-button><mat-icon>add</mat-icon> Add</button>
+</mat-dialog-actions>

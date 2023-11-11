@@ -12,6 +12,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { MainNavComponent } from './core/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -19,6 +22,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatchHistoryComponent } from './features/match-history/match-history.component';
 import { EnterMatchComponent } from './features/enter-match/enter-match.component';
 import { AddPlayerComponent } from './features/player-list/add-player/add-player.component';
+import { PlayerService } from './features/player-list/player.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,8 +47,12 @@ import { AddPlayerComponent } from './features/player-list/add-player/add-player
     MatToolbarModule,
     MatSortModule,
     MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [PlayerService, HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

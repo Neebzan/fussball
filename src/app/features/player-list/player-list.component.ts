@@ -1,35 +1,34 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Player } from './models';
+import { MatDialog } from '@angular/material/dialog';
+import { AddPlayerComponent } from './add-player/add-player.component';
+import { PlayerService } from './player.service';
 
 @Component({
   selector: 'app-player-list',
   templateUrl: './player-list.component.html',
   styleUrls: ['./player-list.component.scss'],
 })
-export class PlayerListComponent implements AfterViewInit {
-  public PLAYERS: Player[] = [
-    {
-      Name: 'Esben Juul Dalsgaard',
-      Initials: 'ESJD',
-      Rank: 5,
-      Rating: 1025,
-    },
-    {
-      Name: 'Morten Roager Sjælland',
-      Initials: 'MORS',
-      Rank: 1,
-      Rating: 1075,
-    },
-  ];
+export class PlayerListComponent implements AfterViewInit, OnInit {
+  constructor(
+    private _liveAnnouncer: LiveAnnouncer,
+    public dialog: MatDialog,
+    private playerService: PlayerService
+  ) {
+    this.playerService.getPlayers();
+  }
+  ngOnInit(): void {
+    this.playerService.getPlayers().subscribe((players) => {
+      this.dataSource.data = players;
+    });
+  }
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  dataSource = new MatTableDataSource<Player>();
 
-  dataSource = new MatTableDataSource(this.PLAYERS);
-
-  columnsToDisplay = ['Rank', 'Name', 'Initials', 'Rating'];
+  columnsToDisplay = ['Name', 'Initials', 'Rating'];
 
   @ViewChild(MatSort) sort: MatSort = new MatSort();
 
@@ -43,5 +42,13 @@ export class PlayerListComponent implements AfterViewInit {
     } else {
       this._liveAnnouncer.announce('Sorting cleared');
     }
+  }
+
+  OpenAddPlayerDialog(): void {
+    const dialogRef = this.dialog.open(AddPlayerComponent, {});
+
+    dialogRef.afterClosed().subscribe((_) => {
+      console.log('dialog closed');
+    });
   }
 }

@@ -1,0 +1,19 @@
+{
+  "players": [
+    {
+      "Name": "Esben Juul Dalsgaard",
+      "Initials": "ESJD",
+      "Rating": 1025
+    },
+    {
+      "Name": "Mikkel Høher",
+      "Initials": "MIHP",
+      "Rating": 990
+    },
+    {
+      "Name": "Morten Roager Sjælland",
+      "Initials": "MORS",
+      "Rating": 1075
+    }
+  ]
+}

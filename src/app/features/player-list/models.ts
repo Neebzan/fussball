@@ -1,6 +1,5 @@
 export interface Player {
-    Name: string;
-    Initials: string;
-    Rank: number;
-    Rating: number;
+  Name: string;
+  Initials: string;
+  Rating: number;
 }
